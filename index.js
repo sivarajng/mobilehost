@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var test = require('./public/json/test');
 var categoryList = require('./public/json/categoryList');
-var collectionsList = require('./public/json/collectionsList');
+var collectionList = require('./public/json/collectionList');
 
 
 app.set('port', (process.env.PORT || 5000))
@@ -24,9 +24,9 @@ app.get('/json/categoryList', function (req, res) {
   res.end();
 })
 
-app.get('/json/collectionsList', function (req, res) {
+app.get('/json/collectionList', function (req, res) {
   res.writeHead(200, { "Content-Type": "application/json" });
-  res.write(JSON.stringify(collectionsList));
+  res.write(JSON.stringify(collectionList));
   res.end();
 })
 
